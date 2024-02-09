@@ -1,6 +1,8 @@
 ---
+import type {ImageMetadata} from "astro";
+
 interface Props {
-    src: string | Image;
+    src: string | ImageMetadata;
     alt: string;
     nsfw?: boolean;
     height?: string;
