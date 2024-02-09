@@ -1,0 +1,79 @@
+---
+
+import Image from "../components/Image.astro";
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import { getCollection, getEntry } from 'astro:content';
+import RecipeLink from "../components/RecipeLink.astro";
+
+const allRecipes = await getCollection("recipes");
+
+import "../styles/common.scss";
+---
+
+<Layout title="Coffee">
+    <main>
+        <h1 class="text-gradient">Everything Coffee</h1>
+        <p>
+            My favorite drink. Everyone has a different taste for it, but surprisingly few people have had truly good cups, made from fresh beans.<br />
+            There's nothing wrong with some good old coffee from a machine at work that probably hasn't been cleaned in the past decade, but there's something special about a cup of coffee that's been made with care and careful selection of recipe.<br />
+            It's also very calming to make.
+        </p>
+
+        <h2>Assorted things</h2>
+        <ul role="list" class="card-grid">
+            <Card title="Nanofoamer Pro" body="A somewhat flawed, but wonderful, coffee foamer" href="/coffee/nanofoamer"></Card>
+            <Card title="Buying coffee beans" body="How to find good beans" href="/coffee/beans"></Card>
+        </ul>
+
+        <h2>My personal recipes</h2>
+        <p>
+            I've been experimenting with coffee for a while now, and I've found a few recipes that I really like.
+        </p>
+
+        <ul role="list" class="card-grid">
+            {allRecipes.map((recipe) => (
+                <RecipeLink recipe={recipe} />
+            ))}
+        </ul>
+
+        <img src="chibi_trans.webp" class="smol-footer-img" />
+    </main>
+</Layout>
+
+<style>
+    main {
+        margin: auto;
+        padding: 1rem;
+        width: 800px;
+        max-width: calc(100% - 2rem);
+        color: white;
+        font-size: 20px;
+        line-height: 1.6;
+    }
+
+    .smol-footer-img {
+        text-align: center;
+        margin-top: 2rem;
+        max-width: calc(100% - 2rem);
+        height: 200px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+
+    h1 {
+        font-size: 3.5rem;
+        margin-bottom: 2rem;
+        line-height: 2;
+    }
+
+    .card-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+        gap: 2rem;
+        padding: 0;
+        list-style: none;
+    }
+
+</style>

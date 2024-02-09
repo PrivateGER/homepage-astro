@@ -1,0 +1,79 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+---
+
+<Layout title="Latte's Homepage">
+	<main>
+		<h1><span class="text-gradient">Latte macchiato</span></h1>
+		<h2>Welcome to my small homepage.</h2>
+		<img src="/chibi_trans.webp" alt="Chibi drawing of Cappuccino" class="astro-a" />
+		<p class="instructions">
+			This site is very much work in progress.
+		</p>
+		<ul role="list" class="link-card-grid">
+			<Card
+				href="https://docs.astro.build/"
+				title="My Projects"
+				body="What do I do all day?"
+			/>
+			<Card
+				href="/coffee"
+				title="Coffee"
+				body="Everything about my favorite drink"
+			/>
+			<Card
+				href="https://plasmatrap.com/@privateger"
+				title="Fediverse"
+				body="My main online presence"
+				newtab
+			/>
+			<Card
+				href="/gallery"
+				title="Gallery"
+				body="A small collection of images and stuff I commissioned"
+			/>
+			<Card
+				href="/about"
+				title="About"
+				body="Who am I?"></Card>
+		</ul>
+	</main>
+</Layout>
+
+<style>
+	.astro-a {
+		position: absolute;
+		top: -16px;
+		left: 50%;
+		transform: translatex(-50%);
+		width: 220px;
+		height: auto;
+		z-index: -1;
+	}
+
+	.instructions {
+		margin-bottom: 2rem;
+		border: 1px solid rgba(var(--accent-light), 25%);
+		background: linear-gradient(rgba(var(--accent-dark), 66%), rgba(var(--accent-dark), 33%));
+		padding: 1.5rem;
+		border-radius: 8px;
+	}
+	.instructions code {
+		font-size: 0.8em;
+		font-weight: bold;
+		background: rgba(var(--accent-light), 12%);
+		color: rgb(var(--accent-light));
+		border-radius: 4px;
+		padding: 0.3em 0.4em;
+	}
+	.instructions strong {
+		color: rgb(var(--accent-light));
+	}
+	.link-card-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+		gap: 2rem;
+		padding: 0;
+	}
+</style>

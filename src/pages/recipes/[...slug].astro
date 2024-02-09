@@ -1,0 +1,28 @@
+---
+import {getCollection, getEntry} from 'astro:content';
+import Layout from "../../layouts/Layout.astro";
+const entry = await getEntry("recipes", "basic-aeropress");
+const { Content, headings } = await entry.render();
+
+export async function getStaticPaths() {
+    const allRecipes = await getCollection("recipes");
+
+    let paths = allRecipes.map((recipe) => {
+        return {
+            params: {
+                slug: recipe.slug,
+            },
+        };
+    });
+
+    return paths;
+}
+---
+
+<Layout title="{entry.title}">
+    <main>
+        <h1>{entry.title}</h1>
+        <p>{entry.description}</p>
+        <Content />
+    </main>
+</Layout>

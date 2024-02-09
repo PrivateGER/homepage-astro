@@ -1,0 +1,11 @@
+---
+interface Props {
+  recipe: any;
+}
+
+const { recipe }: Props = Astro.props;
+
+import Card from "./Card.astro";
+---
+
+<Card title={recipe.data.title} href={"/recipes/" + recipe.slug} body={"Method: " + recipe.data.brewingMethod} />

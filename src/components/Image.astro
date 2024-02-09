@@ -1,0 +1,62 @@
+---
+interface Props {
+    source: string;
+    alt: string;
+    nsfw?: boolean;
+}
+
+const { source, nsfw, alt } = Astro.props;
+
+const nsfwClass = nsfw ? 'nsfw' : '';
+---
+
+<div class="image-card">
+    <img src={ source } alt={ alt } class={nsfwClass} />
+    <div class="image-card__overlay">
+        <div class="image-card__overlay__content">
+            <slot />
+        </div>
+    </div>
+</div>
+
+<style>
+    .image-card {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+    }
+
+    .image-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .image-card img.nsfw {
+        filter: blur(10px);
+    }
+
+    .image-card__overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
+    .image-card:hover .image-card__overlay {
+        opacity: 1;
+    }
+
+    .image-card__overlay__content {
+        color: white;
+        text-align: center;
+    }
+</style>
