@@ -1,13 +1,13 @@
 ---
 interface Props {
 	title: string;
-	body: string;
+	body?: string;
 	href: string;
 	arrowDirection?: 'left' | 'right';
 	newTab?: boolean;
 }
 
-const { href, title, body, newTab = false, arrowDirection = "right" } = Astro.props;
+const { href, title, body = "", newTab = false, arrowDirection = "right" } = Astro.props;
 
 const target = newTab ? '_blank' : '_self';
 

@@ -4,6 +4,8 @@ import Layout from "../../layouts/Layout.astro";
 const entry = await getEntry("recipes", "basic-aeropress");
 const { Content, headings } = await entry.render();
 
+import "../../styles/common.scss";
+
 export async function getStaticPaths() {
     const allRecipes = await getCollection("recipes");
 
@@ -21,8 +23,8 @@ export async function getStaticPaths() {
 
 <Layout title="{entry.title}">
     <main>
-        <h1>{entry.title}</h1>
-        <p>{entry.description}</p>
+        <h1 class="text-gradient">{entry.data.title}</h1>
+        <p>Method: {entry.data.brewingMethod}</p>
         <Content />
     </main>
 </Layout>

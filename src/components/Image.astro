@@ -1,17 +1,17 @@
 ---
 interface Props {
-    source: string;
+    src: string;
     alt: string;
     nsfw?: boolean;
 }
 
-const { source, nsfw, alt } = Astro.props;
+const { src, nsfw, alt } = Astro.props;
 
 const nsfwClass = nsfw ? 'nsfw' : '';
 ---
 
 <div class="image-card">
-    <img src={ source } alt={ alt } class={nsfwClass} />
+    <img src={ src } alt={ alt } class={nsfwClass} />
     <div class="image-card__overlay">
         <div class="image-card__overlay__content">
             <slot />
