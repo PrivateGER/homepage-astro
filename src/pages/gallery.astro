@@ -2,13 +2,18 @@
 
 import ImageCard from "../components/ImageCard.astro";
 import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+
 
 import chibi from "../../public/chibi_trans.webp";
 ---
 
 <Layout title="Gallery">
     <main>
-        <ImageCard src="chibi_trans.webp" alt="Chibi variant of Cappuccino" nsfw height="" />
+        <Card title="Back to overview" href="/" arrowDirection="left"></Card>
+
+        <h1>Cappuccino</h1>
+        <ImageCard src={chibi} alt="Chibi variant of Cappuccino" nsfw height="" />
 
     </main>
 </Layout>
