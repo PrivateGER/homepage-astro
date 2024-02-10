@@ -3,6 +3,7 @@ import {getCollection, getEntry} from 'astro:content';
 import Layout from "../../layouts/Layout.astro";
 const entry = await getEntry("recipes", "basic-aeropress");
 const { Content, headings } = await entry.render();
+import Card from "../../components/Card.astro";
 
 import "../../styles/common.scss";
 
@@ -21,10 +22,12 @@ export async function getStaticPaths() {
 }
 ---
 
-<Layout title="{entry.title}">
+<Layout title={entry.data.title}>
     <main>
         <h1 class="text-gradient">{entry.data.title}</h1>
-        <p>Method: {entry.data.brewingMethod}</p>
+        <Card title="Back to overview" href="/coffee" arrowDirection="left"></Card>
+
+        <h2>Brewing Method: <span class="text-gradient">{entry.data.brewingMethod}</span></h2>
         <Content />
     </main>
 </Layout>

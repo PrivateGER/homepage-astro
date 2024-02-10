@@ -1,6 +1,6 @@
 ---
 
-import Image from "../components/ImageCard.astro";
+import { Image } from 'astro:assets';
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import { getCollection, getEntry } from 'astro:content';
@@ -9,11 +9,14 @@ import RecipeLink from "../components/RecipeLink.astro";
 const allRecipes = await getCollection("recipes");
 
 import "../styles/common.scss";
+import chibi from "../../public/chibi_trans.webp";
+
 ---
 
 <Layout title="Coffee">
     <main>
         <h1 class="text-gradient">Everything Coffee</h1>
+        <Card title="Back to overview" href="/" arrowDirection="left"></Card>
         <p>
             My favorite drink. Everyone has a different taste for it, but surprisingly few people have had truly good cups, made from fresh beans.<br />
             There's nothing wrong with some good old coffee from a machine at work that probably hasn't been cleaned in the past decade, but there's something special about a cup of coffee that's been made with care and careful selection of recipe.<br />
@@ -37,7 +40,7 @@ import "../styles/common.scss";
             ))}
         </ul>
 
-        <img src="chibi_trans.webp" class="smol-footer-img" />
+        <Image src={chibi} class="smol-footer-img" alt="a chibi version of cappuccino" />
     </main>
 </Layout>
 
@@ -55,8 +58,9 @@ import "../styles/common.scss";
     .smol-footer-img {
         text-align: center;
         margin-top: 2rem;
-        max-width: calc(100% - 2rem);
-        height: 200px;
+        max-width: calc(100% - 24rem);
+        height: 100%;
+        width: 100%;
         margin-left: auto;
         margin-right: auto;
         display: block;

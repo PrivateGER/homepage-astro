@@ -23,3 +23,27 @@ main {
   background-size: 400%;
   background-position: 0%;
 }
+
+.info-box {
+  margin-bottom: 2rem;
+  border: 1px solid rgba(var(--accent-light), 25%);
+  background: linear-gradient(rgba(var(--accent-dark), 66%), rgba(var(--accent-dark), 33%));
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.warning-box {
+  margin-bottom: 2rem;
+  border: 1px solid rgba(var(--accent-light), 25%);
+  background: linear-gradient(rgba(241, 174, 28, 66%), rgba(217, 157, 25, 33%));
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.caution-box {
+  margin-bottom: 2rem;
+  border: 1px solid rgba(var(--accent-light), 25%);
+  background: linear-gradient(rgba(199, 31 , 57,66%),rgba(159, 25, 46,33%));
+  padding: 1rem;
+  border-radius: 8px;
+}
