@@ -13,10 +13,14 @@ import '../styles/common.scss';
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
+		<meta name="description" content="" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
+
+		<meta property="og:title" content={title} />
+		<meta property="twitter:title" content={title}>
+		<meta property="twitter:card" content="summary">
 
 		<title>{title}</title>
 		<ViewTransitions />
