@@ -5,7 +5,9 @@ import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 
 
-import chibi from "../../public/chibi_trans.webp";
+import chibi from "../../assets/chibi_trans.webp";
+import desk from "../../assets/desk.png";
+
 ---
 
 <Layout title="Gallery">
@@ -13,7 +15,11 @@ import chibi from "../../public/chibi_trans.webp";
         <Card title="Back to overview" href="/" arrowDirection="left"></Card>
 
         <h1>Cappuccino</h1>
-        <ImageCard src={chibi} alt="Chibi variant of Cappuccino" nsfw height="" />
+
+        <ul>
+            <ImageCard src={chibi} alt="Chibi variant of Cappuccino"  />
+            <ImageCard src={desk} alt="Chibi variant of Cappuccino"  />
+        </ul>
 
     </main>
 </Layout>

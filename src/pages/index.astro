@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import { Image } from 'astro:assets';
+import chibi from "../../assets/chibi_trans.webp";
 
 import fediringLogo from "../../assets/fediring.gif"
 ---
@@ -10,7 +11,7 @@ import fediringLogo from "../../assets/fediring.gif"
 	<main>
 		<h1><span class="text-gradient">Latte macchiato</span></h1>
 		<h2>Welcome to my small homepage.</h2>
-		<img src="/chibi_trans.webp" alt="Chibi drawing of Cappuccino" class="astro-a" />
+		<Image src={chibi} alt="Chibi drawing of Cappuccino" class="astro-a" />
 		<p class="info-box">
 			This site is very much work in progress.
 		</p>
