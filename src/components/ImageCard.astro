@@ -32,7 +32,8 @@ import "../styles/common.scss"
                 <div class="image-card__overlay__content">
                     <Icon name="ph:eye-slash" size={48} />
                     <br />
-                    <p>Mature content</p>
+                    <p class="mature-text-header"><b>Mature content</b></p>
+                    <p>Hold down mouse to reveal</p>
                 </div>
             </div>
         )
@@ -40,6 +41,10 @@ import "../styles/common.scss"
 </div>
 
 <style>
+    .mature-text-header {
+        font-size: 30px;
+    }
+
     .image-card {
         position: relative;
         display: inline-block;
@@ -51,14 +56,14 @@ import "../styles/common.scss"
         object-fit: cover;
     }
 
-    .image-card img.nsfw:not(:hover) {
+    .image-card img.nsfw:not(:active) {
         filter: blur(50px);
-        transition: filter 0.6s;
+        transition: filter 0.3s;
     }
 
-    .image-card img.nsfw:hover {
+    .image-card img.nsfw:active {
         filter: none;
-        transition: filter 0.6s;
+        transition: filter 0.3s;
     }
 
     .image-card__overlay {
@@ -76,7 +81,7 @@ import "../styles/common.scss"
         pointer-events: none;
     }
 
-    .image-card:hover .image-card__overlay {
+    .image-card:active .image-card__overlay {
         opacity: 0;
     }
 
