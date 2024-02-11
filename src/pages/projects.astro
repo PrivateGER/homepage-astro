@@ -1,0 +1,53 @@
+---
+
+import Layout from "../layouts/Layout.astro";
+import "../styles/common.scss";
+import Card from "../components/Card.astro";
+---
+
+<Layout title="Projects">
+    <main>
+        <h1 class="text-gradient" style="line-height: 1.5;">My Current Projects</h1>
+        <Card title="Back to overview" href="/" arrowDirection="left"></Card>
+
+        <div class="box shadow" style="margin-top: 80px;">
+            <sh>
+            <Card href="https://plasmatrap.com" title="PlasmaTrap" body="A medium-size fediverse server" newTab>
+        </div>
+
+        <br />
+        <Card href="https://github.com/PrivateGER/patreon-dl" title="patreon-dl" body="A downloading tool for Patreon" newTab></Card>
+        <br />
+
+        <Card href="https://github.com/PrivateGER/Paktum" title="Paktum" body="An image server with scraping function" newTab></Card>
+    </main>
+</Layout>
+
+<style>
+.box {
+  --s: 15px; /* the spread-radius */
+  position: relative;
+  transform: translate(0);
+  transform-style: preserve-3d;
+}
+.shadow:before {
+  content:"";
+  position: absolute;
+  inset: calc(-1*var(--s));
+  clip-path: polygon(
+    -100vmax -100vmax,
+     100vmax -100vmax,
+     100vmax 100vmax,
+    -100vmax 100vmax,
+    -100vmax -100vmax,
+    calc(0px  + var(--s)) calc(0px  + var(--s)),
+    calc(0px  + var(--s)) calc(100% - var(--s)),
+    calc(100% - var(--s)) calc(100% - var(--s)),
+    calc(100% - var(--s)) calc(0px  + var(--s)),
+    calc(0px  + var(--s)) calc(0px  + var(--s))
+  );
+  transform: translate3d(0,0,-1px);
+  background: conic-gradient(from 90deg at 40% -25%, #ffd700, #f79d03, #ee6907, #e6390a, #de0d0d, #d61039, #cf1261, #c71585, #cf1261, #d61039, #de0d0d, #ee6907, #f79d03, #ffd700, #ffd700, #ffd700);
+  filter: blur(10px);
+}
+</style>
