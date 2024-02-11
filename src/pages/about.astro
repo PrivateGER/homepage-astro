@@ -1,0 +1,27 @@
+---
+
+import Layout from "../layouts/Layout.astro";
+import "../styles/common.scss";
+import Card from "../components/Card.astro";
+---
+
+<Layout title="Projects">
+    <main>
+        <h1 class="text-gradient" style="line-height: 1.5;">About me</h1>
+        <Card title="Back to overview" href="/" arrowDirection="left"></Card>
+
+        <h2>Profile</h1>
+        <p>
+            Hi! I'm <span class="text-gradient">Latte macchiato</span>, a software developer in his 20s, living in Germany.
+            <br />
+            I touch computers for a living and have done so passionately for my whole life, starting at around 5 years old.
+            <br />
+            I enjoy working on small personal projects, messing with hardware and hosting services for myself and others, like my current main project, PlasmaTrap.
+        </p>
+
+        <h2>About this site</h2>
+        <p>
+            This site was created in Astro, with the full source code <a href="https://github.com/PrivateGER/homepage-astro" style="color: white">available here.</a>
+        </p>
+    </main>
+</Layout>
