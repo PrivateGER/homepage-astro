@@ -33,7 +33,7 @@ import "../styles/common.scss"
                     <Icon name="ph:eye-slash" size={48} />
                     <br />
                     <p class="mature-text-header"><b>Mature content</b></p>
-                    <p>Hold down mouse to reveal</p>
+                    <p>Hover to reveal</p>
                 </div>
             </div>
         )
@@ -56,12 +56,12 @@ import "../styles/common.scss"
         object-fit: cover;
     }
 
-    .image-card img.nsfw:not(:active) {
+    .image-card img.nsfw:not(:hover) {
         filter: blur(50px);
         transition: filter 0.3s;
     }
 
-    .image-card img.nsfw:active {
+    .image-card img.nsfw:hover {
         filter: none;
         transition: filter 0.3s;
     }
@@ -81,7 +81,7 @@ import "../styles/common.scss"
         pointer-events: none;
     }
 
-    .image-card:active .image-card__overlay {
+    .image-card:hover .image-card__overlay {
         opacity: 0;
     }
 

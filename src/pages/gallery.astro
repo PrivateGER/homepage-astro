@@ -7,22 +7,53 @@ import Card from "../components/Card.astro";
 import swimsuit from "../../assets/swimsuit.png"
 import chibi from "../../assets/chibi_trans.webp";
 import desk from "../../assets/desk.png";
+import aenora from "../../assets/aenora_nightwhisper.png";
 
 ---
 
 <Layout title="Gallery">
     <main>
         <Card title="Back to overview" href="/" arrowDirection="left"></Card>
+        <h1 class="text-gradient">Commission Gallery</h1>
+        <p>I've commissioned multiple drawings of characters I came up with in my time. Here's a gallery of some of them.</p>
 
-        <h1>Cappuccino</h1>
-
+        <h2 class="text-gradient">Cappuccino</h2>
+        <p>My main character, used as profile picture and all basically everywhere.</p>
         <ul>
-            <ImageCard src={chibi} alt="Chibi variant of Cappuccino"  />
-            <ImageCard src={desk} alt="Cappuccino sitting on a desk, drinking a coffee"  />
-            <ImageCard src={swimsuit} alt="Cappuccino in a swimsuit" nsfw />
+            <div class="gallery-card">
+                <div>
+                    <ImageCard src={chibi} alt="Chibi variant of Cappuccino"  />
+                </div>
+                <Card title="Chibi Cappuccino" body="Artist on VGen" href="https://vgen.co/raspberii_" newTab></Card>
+            </div>
+            <br />
 
+            <div class="gallery-card">
+                <div>
+                    <ImageCard src={desk} alt="Cappuccino sitting on a desk, drinking a coffee"  />
+                </div>
+                <Card title="Cappuccino drinking coffee" body="Artist on Fiverr" href="https://www.fiverr.com/artryan101" newTab></Card>
+            </div>
+            <br />
+
+            <div class="gallery-card">
+                <div>
+                    <ImageCard src={swimsuit} alt="Cappuccino in a swimsuit" nsfw width="100%" />
+                </div>
+                <Card title="Cappuccino in a swimsuit" body="Artist on VGen" href="https://vgen.co/monoartstudio/" newTab></Card>
+            </div>
         </ul>
 
+        <h2 class="text-gradient">Aenora Nightwhisper</h2>
+        <p>A Daughters of Khaine assassin in a Warhammer: Age of Sigmar TTRPG game I played.</p>
+        <ul>
+            <div class="gallery-card">
+                <div>
+                    <ImageCard src={aenora} alt="Aenora in the streets of Greywater Fastness" nsfw />
+                </div>
+                <Card title="Aenora in the streets of Greywater Fastness" body="Artist on VGen" href="https://vgen.co/monoartstudio/" newTab></Card>
+            </div>
+        </ul>
     </main>
 </Layout>
 
@@ -37,4 +68,21 @@ import desk from "../../assets/desk.png";
         line-height: 1.6;
     }
 
+	.gallery-card {
+		list-style: none;
+		padding: 1px;
+		background-color: #23262d;
+		background-image: none;
+		background-size: 400%;
+		border-radius: 7px;
+		background-position: 100%;
+		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+	}
+
+    .gallery-card div {
+        text-align: center;
+        margin-bottom: 0px;
+    }
+    
 </style>
