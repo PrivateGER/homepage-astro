@@ -5,9 +5,10 @@ interface Props {
 	href: string;
 	arrowDirection?: 'left' | 'right';
 	newTab?: boolean;
+	ownedByMe?: boolean;
 }
 
-const { href, title, body = "", newTab = false, arrowDirection = "right" } = Astro.props;
+const { href, title, body = "", newTab = false, arrowDirection = "right", ownedByMe = false } = Astro.props;
 
 const target = newTab ? '_blank' : '_self';
 
@@ -15,7 +16,7 @@ const arrow = arrowDirection === 'left' ? '&larr;' : '&rarr;';
 ---
 
 <li class="link-card">
-	<a href={href} target={ target }>
+	<a href={href} target={ target } rel={ ownedByMe ? "me" : "" }>
 		<h2>
 			<!-- If arrowDirection is left, render the arrow before the title -->
 			{
