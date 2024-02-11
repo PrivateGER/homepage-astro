@@ -1,7 +1,11 @@
 ---
 import {getCollection, getEntry} from 'astro:content';
 import Layout from "../../layouts/Layout.astro";
-const entry = await getEntry("recipes", "basic-aeropress");
+
+const { slug } = Astro.params;
+
+const entry = await getEntry("recipes", slug);
+
 const { Content, headings } = await entry.render();
 import Card from "../../components/Card.astro";
 
